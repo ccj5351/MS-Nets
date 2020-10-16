@@ -1,5 +1,6 @@
 # MS-Nets (Code Coming Soon!!!)
-Domain-invariant Matching Space Stereo Networks (MS-Nets)
+
+[Matching-space Stereo Networks for Cross-domain Generalization](https://arxiv.org/abs/2010.07347)
 
 <img align="center" src="files/msnet-archi-02.png">
 
@@ -16,10 +17,12 @@ Domain-invariant Matching Space Stereo Networks (MS-Nets)
 ## Reference:
 
 If you find the code useful, please cite our paper:
-
-    @inproceedings{Cai2020MS-Nets,
-      title={Matching-space Stereo Networks for Cross-domain Generalization},
-      author={Cai, Changjiang and Poggi, Matteo and Mattoccia, Stefano and Mordohai, Philippos},
-      booktitle={International Conference on 3D Vision (3DV)},
-      year={2020}
+    
+    @misc{cai2020matchingspace,
+      title={Matching-space Stereo Networks for Cross-domain Generalization}, 
+      author={Changjiang Cai and Matteo Poggi and Stefano Mattoccia and Philippos Mordohai},
+      year={2020},
+      eprint={2010.07347},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
     }
