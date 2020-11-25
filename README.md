@@ -6,7 +6,7 @@ This is a work by [Changjiang Cai](https://www.changjiangcai.com), [Matteo Poggi
 See the links: [**arXiv**](https://arxiv.org/abs/2010.07347), [**Slides**](https://github.com/ccj5351/MS-Nets/blob/master/files/msnet-10mins-final.pdf), [**Poster**](https://github.com/ccj5351/MS-Nets/blob/master/files/poster-msnet.pdf), [**Conf-Proceeding**](https://www.changjiangcai.com/files/dafstereonet-3dv2020/daf-stereo-3dv-conf20-pub.pdf)
 
 <p align="center">
- <img align="center" src="files/msnet-archi-02.png" alt="msnet architecture" width="500">
+ <img align="center" src="files/msnet-archi-02.png" alt="msnet architecture" width="600">
 </p>
 
 ---
@@ -15,7 +15,7 @@ Please check our presentation video as shown below:
 
 <p align="center">
   <a href="https://youtu.be/j2QFDix0_fM">
-  <img src="files/msnet-10-mins-video.png" alt="10 minute 3DV presentation video link" width="400">
+  <img src="files/msnet-10-mins-video.png" alt="10 minute 3DV presentation video link" width="500">
   </a>
 </p>
 
