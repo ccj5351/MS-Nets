@@ -1,0 +1,64 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.pyc
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# since different machines have different CMakeLists.txt.
+# to specify the lib or include path.
+#*.txt
+
+tags
+src/tags
+src/.*.swp
+
+# since different machines have different CMakeLists.txt.
+#src/cpp/paramSetting.hpp
+#src/cpp/CMakeLists.txt
+src/cpp/build
+src/cpp/lib
+results
+logs
+backup_log
+.*.swp
+json/.*.swp
+*.d
+*.so
+*.a
+*/bin/*
+do_main_cbmvnet.sh
+
+__pycache__/
