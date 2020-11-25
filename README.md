@@ -47,7 +47,7 @@ Verified platform/settings: ubuntu 16.04 (or 18.04) + cuda 10.0 + python 3.7 (or
 
 Assuming this repository is located at `~/MS-Nets` (definitely you can put it anywhere you prefer), with Ubuntu 18.04 OS and Python 3.7.
 
-1. Compile the code to generate the libraries (with the help of Boost-Python) which are used to extract Matching Space (MS features, as follows:
+1. Compile the code to generate the libraries (with the help of Boost-Python) which are used to extract Matching Space (MS) features, as follows:
 
    ```bash
    cd ~/MS-Nets/src/cpp
@@ -69,6 +69,13 @@ Assuming this repository is located at `~/MS-Nets` (definitely you can put it an
 3. Training, Evaluation and Testing:
    - See the bash file `do_main_msnet.sh` for more details.
    
+
+## Pretrained Models
+ - Coming soon ...
+
+## Results
+ - Coming soon ...
+
 
 ## Reference:
 
