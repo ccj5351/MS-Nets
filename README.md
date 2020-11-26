@@ -79,8 +79,20 @@ Assuming this repository is located at `~/MS-Nets` (definitely you can put it an
 
 ## Reference:
 
-If you find the code useful, please cite our paper:
+- If you find the code useful, please cite our paper:
     
+``` 
+@inproceedings{cai2020matchingspace,
+    title={Matching-space Stereo Networks for Cross-domain Generalization}, 
+    author={Changjiang Cai and Matteo Poggi and Stefano Mattoccia and Philippos Mordohai},
+    booktitle={2020 International Conference on 3D Vision (3DV)}, 
+    year={2020},
+    pages={364-373},
+    doi={10.1109/3DV50981.2020.00046}
+  }
+```
+
+- Or the arXiv version.
 
 ``` 
 @misc{cai2020matchingspace,
@@ -92,6 +104,8 @@ If you find the code useful, please cite our paper:
     primaryClass={cs.CV}
   }
 ```
+
+- For the matching space features, please cite this paper: 
 
 ```
 @inproceedings{batsos2018cbmv,
