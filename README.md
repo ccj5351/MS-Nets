@@ -118,3 +118,7 @@ Assuming this repository is located at `~/MS-Nets` (definitely you can put it an
 ## Contact
 
 Changjiang Cai, Email: changjiangcai2020 AT Gmail or hit my [homepage](https://www.changjiangcai.com/).
+
+## Acknowledgements
+
+Part of the code is adopted from existing works of DispNetC, GCNet, PSMNet, GANet and so on. We thank the awesome repositories provided by the authors and/or the third party.
