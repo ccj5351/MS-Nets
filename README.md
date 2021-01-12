@@ -121,4 +121,4 @@ Changjiang Cai, Email: changjiangcai2020 AT Gmail or hit my [homepage](https://w
 
 ## Acknowledgements
 
-Part of the code is adopted from existing works of DispNetC, GCNet, PSMNet, GANet and so on. We thank the awesome repositories provided by the authors and/or the third party.
+Part of the code is adopted from existing works of GCNet, PSMNet and so on. We thank the awesome repositories provided by the authors and/or the third party.
