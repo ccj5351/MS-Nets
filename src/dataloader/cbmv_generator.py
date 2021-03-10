@@ -16,6 +16,7 @@ import torch
 import src.cpp.lib.libmatchers as mtc
 import src.cpp.lib.libfeatextract as fte
 import skimage
+import skimage.transform
 from PIL import Image
 #from termcolor import colored
 
