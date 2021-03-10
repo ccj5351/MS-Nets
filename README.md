@@ -86,7 +86,7 @@ Assuming this repository is located at `~/MS-Nets` (definitely you can put it an
 
 
 ## Pretrained Models
- - Pytorch pretrained modles on Scene Flow Dataset: [MS-GCNet](https://drive.google.com/file/d/1py0S2w9-HbQIlXwPHP2RuBiTimBEMNci/view?usp=sharing) and [MS-PSMNet](???).
+ - Pytorch pretrained modles on Scene Flow Dataset: [MS-GCNet](https://drive.google.com/file/d/1py0S2w9-HbQIlXwPHP2RuBiTimBEMNci/view?usp=sharing) and MS-PSMNet(coming soon).
  - NOTE: The original MS-GCNet model is implemented in Keras. So if you are intrested in this Keras model, please email me.
 
 ## Results
