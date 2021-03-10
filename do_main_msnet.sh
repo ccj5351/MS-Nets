@@ -81,8 +81,8 @@ LOG_SUMMARY_STEP=40
 #----------------------------
 #TASK_TYPE='train'
 #TASK_TYPE='loop-train'
-TASK_TYPE='val-30'
-#TASK_TYPE='cross-val'
+#TASK_TYPE='val-30'
+TASK_TYPE='cross-val'
 #TASK_TYPE='eval-badx'
 #############################
 
@@ -346,8 +346,8 @@ fi # end of Netwrok Testing
 # MSNet-Generalization experiments 
 ###################################
 
-KT2012=1 KT2015=0 ETH3D=0 MIDDLEBURY=0
-#KT2012=0 KT2015=1 ETH3D=0 MIDDLEBURY=0
+#KT2012=1 KT2015=0 ETH3D=0 MIDDLEBURY=0
+KT2012=0 KT2015=1 ETH3D=0 MIDDLEBURY=0
 #KT2012=0 KT2015=0 ETH3D=1 MIDDLEBURY=0
 #KT2012=0 KT2015=0 ETH3D=0 MIDDLEBURY=1
 
@@ -361,17 +361,11 @@ else
 	flag=false
 fi
 echo "TASK_TYPE=$TASK_TYPE, flag=$flag"
-#exit
-#flag=false
-#flag=true
+
 if [ "$flag" = true ]; then
 	#KT15/12: crop_height=384, crop_width=1248
 	#sceneflow: crop_height=576, crop_width=960
-	#let CROP_HEIGHT=384
-	#let CROP_WIDTH=1248
 	let MAX_DISP=192
-	#let MAX_DISP=256
-	#let MAX_DISP=192-48
 	
 	if [ $KT2012 -eq 1 ] || [ $KT2015 -eq 1 ]; then
 		let CROP_HEIGHT=384
@@ -383,8 +377,7 @@ if [ "$flag" = true ]; then
   fi
 
 
-	#declare -a ALL_EPOS_TEST=(25 50 75 100 125 150 175 200 225 250 275 300 325 350 375 400)
-	declare -a ALL_EPOS_TEST=(19)
+	declare -a ALL_EPOS_TEST=(30 10)
 	for idx in $(seq 0 0)	
 	#for idx in $(seq 0 15)
 	do # epoch model loop
@@ -395,8 +388,9 @@ if [ "$flag" = true ]; then
 		#-------------------------------
 	  if [ "$1" == 8 ]; then
 			#echo "test GCNet baseline: SF --> KITTI !!!"
-      TMP_MODEL_NAME="${MODEL_NAME_STR}-D${MAX_DISP}-sfepo20"
-			RESUME="./checkpoints/saved/${TMP_MODEL_NAME}/${MODEL_NAME}/model_epoch_$(printf "%05d" "$EPO_TEST").tar"
+      TMP_MODEL_NAME="${MODEL_NAME_STR}-D${MAX_DISP}-sfepo30"
+			#RESUME="./checkpoints/saved/${TMP_MODEL_NAME}/${MODEL_NAME}/model_epoch_$(printf "%05d" "$EPO_TEST").tar"
+			RESUME="./checkpoints/saved/msgcnet-pretrained/pretrained_sceneflow_epoch_$(printf "%05d" "$EPO_TEST").tar"
 			if [ "$KT2015" == 1 ]; then
 				echo "test KT15 train-200 !!!"
 				DATA_PATH="${DATA_ROOT}/datasets/KITTI-2015/training/"
@@ -440,7 +434,7 @@ if [ "$flag" = true ]; then
 		fi
 		
 		RESULTDIR="./results/${EXP_NAME}"
-		cd /home/ccj/atten-stereo
+		cd ${PROJECT_ROOT}
 	  CUDA_VISIBLE_DEVICES=0 python3.7 -m main_msnet \
 			--batchSize=${BATCHSIZE} \
 			--crop_height=$CROP_HEIGHT \
