@@ -58,6 +58,17 @@ Assuming this repository is located at `~/MS-Nets` (definitely you can put it an
 
    This will generate the libraries `libfeatextract.so`  and `libmatchers.so`, which you can see at `~/MS-Nets/src/cpp/lib` directory.
 
+   **NOTE**: If you met some compiling error in this step, e.g., `fatal error: numpy/ndarrayobject.h: No such file or directory`. You can sepicify the include directory in `CMakeList.txt`:
+   ```cmake
+   include_directories(
+     {OpenCV_INCLUDE_DIRS}
+     #You can choose one that works for you.
+     #/usr/local/lib/python2.7/dist-packages/numpy/core/include
+     #/usr/local/lib/python3.7/site-packages/numpy/core/include
+     /usr/local/lib/python3.7/dist-packages/numpy/core/include
+   )
+   ``` 
+
 2. (Optional) Compile the libraries which are used to generate KITTI-color-style disparity maps and disparity error maps, both of which are used by our PyTorch codes to generate summary images for Tensorboard visualization to monitor the network training.
    ```bash
    cd ~/MS-Nets/src/cython
@@ -67,14 +78,27 @@ Assuming this repository is located at `~/MS-Nets` (definitely you can put it an
    This will generate the libraries, e.g., `writeKT15ErrorLogColor.cpython-37m-x86_64-linux-gnu.so`  and `writeKT15FalseColorcpython-37m-x86_64-linux-gnu.so` (Please note that here `*-37m-*` means Python 3.7, and you might get different names depending on your system), located at `~/MS-Nets/src/cython` directory.
 
 3. Training, Evaluation and Testing:
-   - See the bash file `do_main_msnet.sh` for more details.
-   
+   - See the bash file `do_main_msnet.sh` for more details. 
+   - Basically you can specify `TASK_TYPE` variable in the bash file for different tasks, including:
+      - `TASK_TYPE='loop-train' or 'train'` for network training, 
+      - `TASK_TYPE='val-30'` for evaluation and
+      - `TASK_TYPE='cross-val'` for the cross domain generalization evalution.
+
 
 ## Pretrained Models
- - Coming soon ...
+ - Pytorch pretrained modles on Scene Flow Dataset: [MS-GCNet](https://drive.google.com/file/d/1py0S2w9-HbQIlXwPHP2RuBiTimBEMNci/view?usp=sharing) and [MS-PSMNet](???).
+ - NOTE: The original MS-GCNet model is implemented in Keras. So if you are intrested in this Keras model, please email me.
 
 ## Results
- - Coming soon ...
+
+- Please check more detailed resutls in `Table 1` of our paper. Here we show generalization results for baseline GCNet and our MS-GCNet. The results are slightly better than the ones reported in our papaer (which were run by our original Keras model).
+
+- Here SF means Scene Flow dataset, KT12 and KT15 mean KITTI 2012 and KITTI 2015, and MB for Middlebury 2014, and ETH3D for ETH3D Low-res two-view dataset.
+
+|  SF -> Others    | KT12 (bad3-noc) | KT15 (bad3-all) | MB (bad3-noc) |  ETH3D (bad1-noc) |
+|------------------|-----------------|-----------------|---------------|-------------------|
+|     GCNet        |    6.22%        |     14.68%      |    30.42%     |   **8.03%**       |
+|   MS-GCNet(ours) |    **4.97%**    |    **6.26%**    |    **27.46%** |    8.28%          |
 
 
 ## Reference:

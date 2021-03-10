@@ -55,7 +55,7 @@ class MyMSNet(object):
         self.model_name = args.model_name
         # only generate feature for left image; otherwise, for both left and right;
         self.is_left_only = True
-        print ('[---???] model_name =', self.model_name)
+        print ('[***] model_name =', self.model_name)
         self.ds = 32 # encoder sacle, that means an image with [H, W] will be downsampled up to to [H/32, W/32]; 
         if self.model_name == 'MS-GCNet':
             from src.models.gcnet_3dcnn import GCNet_CostVolumeAggre as MyAggregationModel
@@ -125,7 +125,7 @@ class MyMSNet(object):
                         )
             
             #assert args.threads == 0, "For ms features extraction and loading, Should be num_workers=0"
-            print ("[???????????????] num_workers = %d, batch_size = %d" % (args.threads, 
+            print ("[**] num_workers = %d, batch_size = %d" % (args.threads, 
                     args.batchSize))
             
 
@@ -545,7 +545,7 @@ class MyMSNet(object):
             batch_size = batch_data[0].size()[0] 
             assert batch_size == 1
             features = batch_data[0] 
-            print ("[???] features size:", features.size())
+            print ("[***] features size:", features.size())
             height = batch_data[1][0].item()
             width = batch_data[2][0].item()
             crop_height = batch_data[3][0].item()
@@ -607,7 +607,7 @@ class MyMSNet(object):
                 error, rate = get_epe_rate(dispGT, disp, self.max_disp, self.args.threshold)
                 avg_err += error
                 avg_rate += rate
-                if iteration % 200 == 0:
+                if iteration % 5 == 0:
                     message_info = "===> Frame {}: ".format(iteration) + current_file + " ==> EPE Error: {:.4f}, Bad-{:.1f} Error: {:.4f}".format(
                         error, self.args.threshold, rate)
                     """ adapted from Mateo's code """
