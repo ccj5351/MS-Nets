@@ -25,7 +25,7 @@ fi
 #----------------------------
 #--- PROJECT_ROOT -----------
 #----------------------------
-PROJECT_ROOT="~/ccj-papers-github-codes/MS-Nets"
+PROJECT_ROOT="/home/$USER/ccj-papers-github-codes/MS-Nets"
 
 #----------------------------
 #--- DATA TYPES -------------
@@ -435,6 +435,7 @@ if [ "$flag" = true ]; then
 		
 		RESULTDIR="./results/${EXP_NAME}"
 		cd ${PROJECT_ROOT}
+		BATCHSIZE=1
 	  CUDA_VISIBLE_DEVICES=0 python3.7 -m main_msnet \
 			--batchSize=${BATCHSIZE} \
 			--crop_height=$CROP_HEIGHT \
